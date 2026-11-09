@@ -1,0 +1,74 @@
+[{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e98"
+	},
+	"naziv": "mali fudbal"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e99"
+	},
+	"naziv": "stoni tenis"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9a"
+	},
+	"naziv": "teretana"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9b"
+	},
+	"naziv": "fudbal"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9c"
+	},
+	"naziv": "kosarka"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9d"
+	},
+	"naziv": "tenis"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9e"
+	},
+	"naziv": "padel"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065e9f"
+	},
+	"naziv": "odbojka"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065ea0"
+	},
+	"naziv": "rukomet"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065ea1"
+	},
+	"naziv": "plivanje"
+},
+{
+	"_id": {
+		"$oid": "6a65bea5e9e1ca40aa065ea2"
+	},
+	"naziv": "trcanje"
+},
+{
+	"_id": {
+		"$oid": "6a65c8f843dadcd2fa4be9cf"
+	},
+	"naziv": "ragbi",
+	"__v": 0
+}]
+

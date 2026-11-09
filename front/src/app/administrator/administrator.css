@@ -1,0 +1,122 @@
+.page {
+    min-height: 100vh;
+    padding: 24px 28px 40px;
+    background: #f7f9fc;
+    font-family: Arial, sans-serif;
+    color: #0f172a;
+}
+
+.panel {
+    padding: 0;
+}
+
+.logout {
+    float: right;
+}
+
+.section {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #d6e0ea;
+}
+
+.poruka {
+    margin: 12px 0;
+    color: #0f766e;
+    font-weight: 700;
+}
+
+button,
+input,
+select {
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 8px;
+    border: 1px solid #1d4ed8;
+    border-radius: 4px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.danger {
+    border-color: #b91c1c;
+    background: #dc2626;
+}
+
+input,
+select {
+    width: 320px;
+    max-width: 100%;
+    border: 1px solid #bdc8d6;
+    border-radius: 4px;
+    background: white;
+}
+
+.korisnik-form {
+    display: grid;
+    grid-template-columns: 160px 320px;
+    gap: 10px 12px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.korisnik-form h4,
+.form-actions {
+    grid-column: 1 / -1;
+}
+
+.sport-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.sport-form button {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #e8eef5;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .korisnik-form {
+        grid-template-columns: 1fr;
+    }
+
+    .korisnik-form h4,
+    .form-actions {
+        grid-column: auto;
+    }
+}

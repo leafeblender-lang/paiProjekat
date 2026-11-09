@@ -1,0 +1,28 @@
+{
+  "name": "backend_node",
+  "version": "1.0.0",
+  "description": "backend node",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.9",
+    "@types/pdfkit": "^0.17.6",
+    "typescript": "~5.9.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5",
+    "pdfkit": "^0.19.1",
+    "resend": "^6.17.2"
+  }
+}

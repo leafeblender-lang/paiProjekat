@@ -1,0 +1,300 @@
+.page {
+    min-height: 100vh;
+    padding: 24px 28px 40px;
+    background: #f7f9fc;
+    font-family: Arial, sans-serif;
+    color: #0f172a;
+}
+
+.panel {
+    padding: 0;
+}
+
+.section {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #d6e0ea;
+}
+
+.logout {
+    float: right;
+}
+
+.poruka {
+    margin: 12px 0;
+    color: #0f766e;
+    font-weight: 700;
+}
+
+.meni {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #d6e0ea;
+}
+
+.meni button.active {
+    background: #1d4ed8;
+    color: white;
+    border-color: #1d4ed8;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 10px 12px;
+    align-items: center;
+}
+
+.form-grid.four {
+    grid-template-columns: 150px 1fr 150px 1fr;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+select,
+textarea,
+button {
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #bdc8d6;
+    border-radius: 4px;
+    background: white;
+}
+
+textarea {
+    height: 80px;
+    margin-top: 8px;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 8px;
+    border: 1px solid #1d4ed8;
+    border-radius: 4px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.secondary {
+    background: #eef2f7;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.preview {
+    display: block;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 1px solid #bdc8d6;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #e8eef5;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: 78px repeat(7, minmax(96px, 1fr));
+    grid-auto-rows: 58px;
+    margin-top: 14px;
+    overflow-x: auto;
+    border: 1px solid #cbd5e1;
+}
+
+.calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calendar-navigation button {
+    margin: 0;
+}
+
+.calendar-range {
+    color: #334155;
+}
+
+.calendar-date-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calendar-date-picker input {
+    width: auto;
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 18px;
+    margin-top: 14px;
+    color: #475569;
+}
+
+.calendar-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+.trening-legend {
+    background: #dbeafe;
+    border-left: 4px solid #2563eb;
+}
+
+.rezervacija-legend {
+    background: #dcfce7;
+    border-left: 4px solid #16a34a;
+}
+
+.calendar-note {
+    margin: 10px 0 0;
+    color: #475569;
+}
+
+.calendar-head,
+.time-cell,
+.calendar-cell {
+    min-height: 58px;
+    border-right: 1px solid #cbd5e1;
+    border-bottom: 1px solid #cbd5e1;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.calendar-head {
+    background: #e8eef5;
+    font-weight: 700;
+}
+
+.time-cell {
+    background: #f8fafc;
+    font-weight: 700;
+}
+
+.calendar-cell {
+    background: white;
+    position: relative;
+    overflow: visible;
+}
+
+.calendar-cell.drop-disabled {
+    background: #f8fafc;
+}
+
+.card {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: 4px;
+    background: #60a5fa;
+    color: white;
+    cursor: grab;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+}
+
+.card.drag-disabled {
+    cursor: default;
+}
+
+.card.dragging {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.card.pending-card {
+    background: #9ca3af;
+}
+
+.card.accepted-card {
+    background: #dc2626;
+}
+
+@media (max-width: 900px) {
+    .profile-grid,
+    .form-grid,
+    .form-grid.four {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trening-card {
+    background: #dbeafe;
+    border-left: 5px solid #2563eb;
+    color: #1e3a8a;
+}
+
+.rezervacija-card {
+    background: #dcfce7;
+    border-left: 5px solid #16a34a;
+    color: #14532d;
+}

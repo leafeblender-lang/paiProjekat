@@ -1,0 +1,31 @@
+[{
+	"_id": {
+		"$oid": "6a6474dde9e1ca40aa065e95"
+	},
+	"id": "firma1",
+	"adresaSedista": "Bulevar Mihajla Pupina 10, Beograd",
+	"maticniBroj": "11111111",
+	"naziv": "Mega Sport Srbija",
+	"pib": "111111111"
+},
+{
+	"_id": {
+		"$oid": "6a6474dde9e1ca40aa065e96"
+	},
+	"id": "firma2",
+	"adresaSedista": "Jurija Gagarina 12, Beograd",
+	"maticniBroj": "22222222",
+	"naziv": "Kocovic",
+	"pib": "222222222"
+},
+{
+	"_id": {
+		"$oid": "6a6474dde9e1ca40aa065e97"
+	},
+	"id": "firma3",
+	"adresaSedista": "Bulevar oslobodjenja 80, Novi Sad",
+	"maticniBroj": "33333333",
+	"naziv": "Ahilej",
+	"pib": "333333333"
+}]
+

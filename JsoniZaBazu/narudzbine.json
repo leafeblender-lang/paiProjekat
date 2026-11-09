@@ -1,0 +1,439 @@
+[{
+	"_id": {
+		"$oid": "6a65774d9f99d2db6b6eabc8"
+	},
+	"id": "id1785034573423",
+	"kor_ime": "veljko",
+	"ukupno": 81600,
+	"status": "otkazano",
+	"datumNarucivanja": {
+		"$date": "2026-07-26T02:56:13.423Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0,
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id2",
+			"opremaNaziv": "Reket Pro",
+			"cena": 22000,
+			"kolicina": 3,
+			"ukupno": 66000,
+			"firmaId": "firma1"
+		},
+		{
+			"objekatId": "",
+			"opremaId": "id9",
+			"opremaNaziv": "Mrezica za kos",
+			"cena": 5200,
+			"kolicina": 3,
+			"ukupno": 15600,
+			"firmaId": "firma1"
+		}
+	],
+	"zaliheVracene": true,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a65797e902b74f14f736718"
+	},
+	"id": "id1785035134239",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id1",
+			"opremaNaziv": "Reket",
+			"cena": 7500,
+			"kolicina": 3,
+			"ukupno": 22500,
+			"firmaId": "firma1"
+		}
+	],
+	"ukupno": 22500,
+	"status": "otkazano",
+	"datumNarucivanja": {
+		"$date": "2026-07-26T03:05:34.239Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0,
+	"zaliheVracene": true,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a657d3c40231042329f77e3"
+	},
+	"id": "id1785036092361",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id2",
+			"opremaNaziv": "Reket Pro",
+			"cena": 22000,
+			"kolicina": 3,
+			"ukupno": 66000,
+			"firmaId": "firma1"
+		}
+	],
+	"ukupno": 66000,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T03:21:32.361Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a657d4840231042329f77ee"
+	},
+	"id": "id1785036104199",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id1",
+			"opremaNaziv": "Reket",
+			"cena": 7500,
+			"kolicina": 4,
+			"ukupno": 30000,
+			"firmaId": "firma1"
+		},
+		{
+			"objekatId": "",
+			"opremaId": "id9",
+			"opremaNaziv": "Mrezica za kos",
+			"cena": 5200,
+			"kolicina": 3,
+			"ukupno": 15600,
+			"firmaId": "firma1"
+		}
+	],
+	"ukupno": 45600,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T03:21:44.199Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a657d9740231042329f7812"
+	},
+	"id": "id1785036183389",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id3",
+			"opremaNaziv": "Reket za Padel",
+			"cena": 9000,
+			"kolicina": 1,
+			"ukupno": 9000,
+			"firmaId": "firma1"
+		}
+	],
+	"ukupno": 9000,
+	"status": "preuzeto",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T03:23:03.389Z"
+	},
+	"datumPreuzimanja": {
+		"$date": "2026-07-26T05:55:11.458Z"
+	},
+	"__v": 0,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a65a199ab51535e0ff3bdb9"
+	},
+	"id": "id1785045401083",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"objekatId": "",
+			"opremaId": "id5",
+			"opremaNaziv": "Fudbalska WC2026",
+			"cena": 4800,
+			"kolicina": 1,
+			"ukupno": 4800,
+			"firmaId": "firma1"
+		}
+	],
+	"ukupno": 4800,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T05:56:41.083Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0,
+	"firmaId": "firma1"
+},
+{
+	"_id": {
+		"$oid": "6a65b1821cf53a48ddf34738"
+	},
+	"id": "id1785049474112_78487723_1",
+	"kupovinaId": "kupovina1785049474112_78487723",
+	"firmaId": "firma1",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id9",
+			"opremaNaziv": "Mrezica za kos",
+			"cena": 5200,
+			"kolicina": 6,
+			"ukupno": 31200
+		}
+	],
+	"ukupno": 31200,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T07:04:34.112Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65b1821cf53a48ddf34739"
+	},
+	"id": "id1785049474112_78487723_2",
+	"kupovinaId": "kupovina1785049474112_78487723",
+	"firmaId": "firma1",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id10",
+			"opremaNaziv": "Kozna lopta Spalding",
+			"cena": 2800,
+			"kolicina": 3,
+			"ukupno": 8400
+		}
+	],
+	"ukupno": 8400,
+	"status": "naruceno",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T07:04:34.112Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65b22e1cf53a48ddf3476d"
+	},
+	"id": "id1785049646096_520865889_1",
+	"kupovinaId": "kupovina1785049646096_520865889",
+	"firmaId": "firma2",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"firmaId": "firma2",
+			"objekatId": "",
+			"opremaId": "id3",
+			"opremaNaziv": "Reket za Padel",
+			"cena": 9000,
+			"kolicina": 7,
+			"ukupno": 63000
+		}
+	],
+	"ukupno": 63000,
+	"status": "preuzeto",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T07:07:26.096Z"
+	},
+	"datumPreuzimanja": {
+		"$date": "2026-07-26T07:12:38.243Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65b22e1cf53a48ddf3476e"
+	},
+	"id": "id1785049646096_520865889_2",
+	"kupovinaId": "kupovina1785049646096_520865889",
+	"firmaId": "firma1",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id10",
+			"opremaNaziv": "Kozna lopta Spalding",
+			"cena": 2800,
+			"kolicina": 3,
+			"ukupno": 8400
+		}
+	],
+	"ukupno": 8400,
+	"status": "naruceno",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T07:07:26.096Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65b3ea1cf53a48ddf347b5"
+	},
+	"id": "id1785050090575_422432509_1",
+	"kupovinaId": "kupovina1785050090575_422432509",
+	"firmaId": "firma2",
+	"kor_ime": "aleksa",
+	"stavke": [
+		{
+			"firmaId": "firma2",
+			"objekatId": "",
+			"opremaId": "id1785049596027_324046761",
+			"opremaNaziv": "Teniske loptice",
+			"cena": 600,
+			"kolicina": 1,
+			"ukupno": 600
+		}
+	],
+	"ukupno": 600,
+	"status": "preuzeto",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T07:14:50.575Z"
+	},
+	"datumPreuzimanja": {
+		"$date": "2026-07-26T13:15:46.344Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65f3df077958d885203ec3"
+	},
+	"id": "id1785066463445_965412137_1",
+	"kupovinaId": "kupovina1785066463445_965412137",
+	"firmaId": "firma1",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id9",
+			"opremaNaziv": "Mrezica za kos",
+			"cena": 5200,
+			"kolicina": 3,
+			"ukupno": 15600
+		}
+	],
+	"ukupno": 15600,
+	"status": "naruceno",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T11:47:43.445Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65f3df077958d885203ec4"
+	},
+	"id": "id1785066463445_965412137_2",
+	"kupovinaId": "kupovina1785066463445_965412137",
+	"firmaId": "firma1",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id10",
+			"opremaNaziv": "Kozna lopta Spalding",
+			"cena": 2800,
+			"kolicina": 4,
+			"ukupno": 11200
+		}
+	],
+	"ukupno": 11200,
+	"status": "naruceno",
+	"zaliheVracene": false,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T11:47:43.445Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65f3df077958d885203ec5"
+	},
+	"id": "id1785066463445_965412137_3",
+	"kupovinaId": "kupovina1785066463445_965412137",
+	"firmaId": "firma2",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"firmaId": "firma2",
+			"objekatId": "",
+			"opremaId": "id3",
+			"opremaNaziv": "Reket za Padel",
+			"cena": 9000,
+			"kolicina": 2,
+			"ukupno": 18000
+		}
+	],
+	"ukupno": 18000,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T11:47:43.445Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a6609855bf33cbb050a168f"
+	},
+	"id": "id1785072005173_417003274_1",
+	"kupovinaId": "kupovina1785072005173_417003274",
+	"firmaId": "firma1",
+	"kor_ime": "veljko",
+	"stavke": [
+		{
+			"firmaId": "firma1",
+			"objekatId": "",
+			"opremaId": "id1",
+			"opremaNaziv": "Reket",
+			"cena": 7500,
+			"kolicina": 4,
+			"ukupno": 30000
+		}
+	],
+	"ukupno": 30000,
+	"status": "otkazano",
+	"zaliheVracene": true,
+	"datumNarucivanja": {
+		"$date": "2026-07-26T13:20:05.173Z"
+	},
+	"datumPreuzimanja": null,
+	"__v": 0
+}]
+

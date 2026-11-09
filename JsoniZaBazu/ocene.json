@@ -1,0 +1,16 @@
+[{
+	"_id": {
+		"$oid": "6a656cdd6da60efa544db21e"
+	},
+	"id": "id1785031901801",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"kor_ime": "veljko",
+	"reakcija": "lajk",
+	"komentar": "dobro je",
+	"datum": {
+		"$date": "2026-07-26T02:11:41.802Z"
+	},
+	"__v": 0
+}]
+

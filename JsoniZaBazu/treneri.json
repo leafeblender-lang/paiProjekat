@@ -1,0 +1,50 @@
+[{
+	"_id": {
+		"$oid": "6a64f5cbe71adf16c41cab05"
+	},
+	"id": "trener1",
+	"objekatId": [
+		"id11",
+		"id12"
+	],
+	"objekatNaziv": "GDM SC",
+	"ime": "Milos",
+	"sport": "mali fudbal",
+	"specijalizacija": "Tehnika i kondicija za mali fudbal",
+	"prosecnaOcena": 4.8,
+	"cenaPoSatu": 2800,
+	"status": "neaktivan"
+},
+{
+	"_id": {
+		"$oid": "6a64f5cbe71adf16c41cab06"
+	},
+	"id": "trener2",
+	"objekatId": [
+		"id2"
+	],
+	"objekatNaziv": "Winner Padel",
+	"ime": "Petar",
+	"sport": "padel",
+	"specijalizacija": "Padel za pocetnike i napredne igrace",
+	"prosecnaOcena": 4.6,
+	"cenaPoSatu": 3200,
+	"status": "aktivan"
+},
+{
+	"_id": {
+		"$oid": "6a64f5cbe71adf16c41cab07"
+	},
+	"id": "trener3",
+	"objekatId": [
+		"id12"
+	],
+	"objekatNaziv": "Pinki",
+	"ime": "Anastasija",
+	"sport": "stoni tenis",
+	"specijalizacija": "Tehnika servisa i takmicarska priprema",
+	"prosecnaOcena": 4.9,
+	"cenaPoSatu": 2500,
+	"status": "aktivan"
+}]
+

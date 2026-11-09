@@ -1,0 +1,18 @@
+<main class="auth-page">
+    <section class="auth-box">
+        <h2>Reset lozinke</h2>
+
+        <label>Nova lozinka</label>
+        <input type="password" [(ngModel)]="lozinka">
+
+        <label>Ponovite lozinku</label>
+        <input type="password" [(ngModel)]="ponovljenaLozinka">
+
+        @if (poruka) {
+            <p>{{ poruka }}</p>
+
+        }
+
+        <button (click)="promeniLozinku()">Promeni lozinku</button>
+    </section>
+</main>

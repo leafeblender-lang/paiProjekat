@@ -1,0 +1,867 @@
+<main class="page">
+    <section class="panel">
+        <button class="logout" (click)="logout()">Odjavi se</button>
+        <h2>Zaposleni</h2>
+
+        @if (poruka) {
+            <p class="poruka">{{ poruka }}</p>
+        }
+
+        @if (user) {
+            <nav class="meni">
+                <button [class.active]="prikaz == 'profil'" (click)="prikaz = 'profil'">Profil</button>
+           
+                <button [class.active]="prikaz == 'objekti'" (click)="prikaz = 'objekti'">Objekti</button>
+                <button [class.active]="prikaz == 'rezervacije'" (click)="prikaz = 'rezervacije'">Rezervacije</button>
+                <button [class.active]="prikaz == 'promocije'" (click)="prikaz = 'promocije'">Promocije</button>
+                <button [class.active]="prikaz == 'oprema'" (click)="prikaz = 'oprema'">Oprema</button>
+                <button [class.active]="prikaz == 'kalendar'" (click)="prikaz = 'kalendar'">Kalendar</button>
+                <button [class.active]="prikaz == 'izvestaji'" (click)="prikaz = 'izvestaji'">Izvestaji</button>
+            </nav>
+
+            @if (prikaz == 'profil') {
+            <section class="section">
+                <h3>Licni podaci</h3>
+
+                <div class="profile-grid">
+                    <div>
+                        <img class="preview" [src]="user.profilnaSlika" alt="Profilna slika">
+                        <input
+                            #profilnaInput
+                            type="file"
+                            accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                            (change)="uploadSlike($event)">
+                        <button
+                            type="button"
+                            class="secondary"
+                            (click)="generisiAvatar()">
+                            Generisi avatar
+                        </button>
+
+                        @if (avatar) {
+                            <img class="preview" [src]="avatar" alt="Avatar">
+                            <button
+                                type="button"
+                                class="secondary"
+                                (click)="sacuvajAvatar()">
+                                Sacuvaj kao profilnu sliku
+                            </button>
+                        }
+                    </div>
+
+                    <div class="form-grid">
+                        <label>Korisnicko ime</label>
+                        <input
+                            type="text"
+                            [(ngModel)]="user.kor_ime"
+                            disabled>
+
+                        <label>Ime</label>
+                        <input type="text" [(ngModel)]="user.ime">
+
+                        <label>Prezime</label>
+                        <input type="text" [(ngModel)]="user.prezime">
+
+                        <label>Telefon</label>
+                        <input type="text" [(ngModel)]="user.telefon">
+
+                        <label>Mejl</label>
+                        <input type="email" [(ngModel)]="user.mejl">
+
+                        <button (click)="sacuvajProfil()">Sacuvaj profil</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Objekti firme ({{ objekti.length }})</h3>
+
+                @if (objekti.length == 0) {
+                    <p>Firma trenutno nema evidentirane sportske objekte.</p>
+                }
+                @else {
+                <table>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Grad</th>
+                        <th>Status</th>
+                        <th>Sportovi</th>
+                        <th>Elementi</th>
+                    </tr>
+                    @for (o of objekti; track o.id) {
+                        <tr>
+                            <td>{{ o.naziv }}</td>
+                            <td>{{ o.grad }}</td>
+                            <td
+                                [class.green]="o.status == 'aktivan'"
+                                [class.red]="o.status == 'odbijen'">
+                                {{ o.status }}
+                            </td>
+                            <td>{{ o.sportovi.join(', ') }}</td>
+                            <td>
+                                @for (t of o.tereni; track t.naziv) {
+                                    <div>
+                                        {{ t.naziv }} - {{ t.vrsta }} - {{ t.tip }} - kap. {{ t.kapacitet }}
+                                    </div>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+                }
+            </section>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+            @if (prikaz == 'objekti') {
+            <section class="section">
+                <h3>Dodavanje / azuriranje objekta</h3>
+
+                <div class="form-grid">
+                    <label>Postojeci objekat</label>
+                    <select
+                        [(ngModel)]="izabraniObjekatId"
+                        (change)="izaberiObjekatZaTerene()">
+
+                        <option value="">novi objekat</option>
+
+                        @for (o of objekti; track o.id) {
+                            <option [value]="o.id">
+                                {{ o.naziv }} - {{ o.grad }} - {{ o.status }}
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary"
+                    (click)="noviObjekat()">
+                    Nova forma
+                </button>
+
+                <h4>Osnovni podaci</h4>
+
+                <div class="form-grid four">
+                    <label>Naziv</label>
+                    <input type="text" [(ngModel)]="objekat.naziv">
+
+                    <label>Grad</label>
+                    <input type="text" [(ngModel)]="objekat.grad">
+
+                    <label>Adresa</label>
+                    <input type="text" [(ngModel)]="objekat.adresa">
+
+                    <label>Cena rezervacije po satu</label>
+                    <input type="number" [(ngModel)]="objekat.cenaRezervacijePoSatu">
+
+                    <label>Radno vreme od</label>
+                    <input type="time" [(ngModel)]="objekat.radnoVremeOd">
+
+                    <label>Radno vreme do</label>
+                    <input type="time" [(ngModel)]="objekat.radnoVremeDo">
+
+                    <label>Dozvoljeni nedolasci</label>
+                    <input
+                        type="number"
+                        min="0"
+                        [(ngModel)]="objekat.dozvoljeniNedolasci">
+                </div>
+
+                <h4>Elementi objekta ({{ objekat.tereni.length }}, najmanje 2)</h4>
+
+                <p>
+                    Objekat mora imati najmanje dva elementa i bar jedan otvoreni teren
+                    kapaciteta najmanje 4 mesta. Nazivi elemenata u objektu moraju biti
+                    jedinstveni.
+                </p>
+
+                @if (objekat.tereni.length > 0) {
+                    <table>
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Sport</th>
+                            <th>Tip</th>
+                            <th>Vrsta</th>
+                            <th>Kapacitet</th>
+                            <th>Opis opreme</th>
+                            <th>Akcija</th>
+                        </tr>
+
+                        @for (t of objekat.tereni; track $index; let i = $index) {
+                            <tr>
+                                <td>{{ t.naziv }}</td>
+                                <td>{{ t.sport }}</td>
+                                <td>{{ t.tip }}</td>
+                                <td>{{ t.vrsta }}</td>
+                                <td>{{ t.kapacitet }}</td>
+                                <td>{{ t.opisOpreme }}</td>
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="secondary"
+                                        (click)="ukloniTeren(i)">
+                                        Ukloni
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+
+                <button
+                    type="button"
+                    (click)="otvoriDodavanjeTerena()">
+                    Dodaj element
+                </button>
+
+                @if (prikaziDodavanjeTerena) {
+                    <h4>Novi element</h4>
+
+                    <div class="form-grid four">
+                        <label>Naziv elementa</label>
+                        <input
+                            type="text"
+                            [(ngModel)]="teren.naziv">
+
+                        <label>Sport</label>
+                        <select [(ngModel)]="teren.sport">
+                            <option value="">izaberi sport</option>
+                            @for (sport of sportovi; track sport) {
+                                <option [value]="sport">{{ sport }}</option>
+                            }
+                        </select>
+
+                        <label>Tip</label>
+                        <select [(ngModel)]="teren.tip">
+                            <option value="otvoreni">otvoreni</option>
+                            <option value="zatvoreni">zatvoreni</option>
+                        </select>
+
+                        <label>Vrsta</label>
+                        <select [(ngModel)]="teren.vrsta">
+                            <option value="teren">teren</option>
+                            <option value="hala">hala</option>
+                            <option value="dvorana">dvorana</option>
+                        </select>
+
+                        <label>Kapacitet</label>
+                        <input
+                            type="number"
+                            min="1"
+                            [(ngModel)]="teren.kapacitet">
+                    </div>
+
+                    <label>Opis opreme</label>
+                    <textarea
+                        maxlength="300"
+                        [(ngModel)]="teren.opisOpreme">
+                    </textarea>
+
+                    <button
+                        type="button"
+                        (click)="dodajTeren()">
+                        Dodaj u objekat
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary"
+                        (click)="zatvoriDodavanjeTerena()">
+                        Odustani
+                    </button>
+                }
+
+                <button
+                    type="button"
+                    [disabled]="objekat.tereni.length < 2"
+                    (click)="sacuvajObjekat()">
+                    @if (objekat.id) {
+                        Sacuvaj izmene objekta
+                    }
+                    @else {
+                        Sacuvaj novi objekat
+                    }
+                </button>
+
+                <h4>Import objekata iz JSON fajla</h4>
+                <p>Ista pravila vaze i za svaki objekat iz JSON fajla.</p>
+                <input
+                    type="file"
+                    accept=".json,application/json"
+                    (change)="importJson($event)">
+            </section>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @if (prikaz == 'rezervacije') {
+            <section class="section">
+                <h3>Rezervacije i treninzi</h3>
+
+                <table>
+                    <tr>
+                        <th>Objekat</th>
+                        <th>Teren/hala</th>
+                        <th>Korisnik</th>
+                        <th>Tip</th>
+                        <th>Termin</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                    @for (t of termini; track t.id) {
+                        <tr>
+                            <td>{{ t.objekatNaziv }}</td>
+                            <td>{{ t.terenNaziv }}</td>
+                            <td>{{ t.kor_ime }}</td>
+                            <td>{{ t.tip }}</td>
+                            <td>{{ t.pocetak | date:'dd.MM.yyyy. HH:mm' }} - {{ t.kraj | date:'HH:mm' }}</td>
+                            <td>{{ t.status }} {{ t.prisustvo }}</td>
+                            <td>
+                                @if (mozeOdobravanje(t)) {
+                                    <button (click)="prihvatiTermin(t.id)">Prihvati</button>
+                                    <button class="secondary" (click)="otkaziTerminZaposleni(t.id)">Odbij</button>
+                                }
+                                @if (terminPrihvacen(t) && !t.prisustvo) {
+                                    <button (click)="potvrdiTermin(t)">Potvrdi</button>
+                                    <button class="secondary" (click)="odjaviTermin(t)">Odjavi</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </section>
+            }
+
+
+
+
+
+
+
+
+@if (prikaz == 'promocije') {
+    <section class="section">
+        <h3>Promocije</h3>
+
+        @if (promocije.length == 0) {
+            <p>Nema promocija.</p>
+        }
+        @else {
+            <table>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Objekat</th>
+                    <th>Period</th>
+                    <th>Popust</th>
+                    <th>Sport</th>
+                    <th>Status</th>
+                    <th>Akcija</th>
+                </tr>
+
+                @for (p of promocije; track p._id || p.id) {
+                    <tr>
+                        <td>{{ p.naziv }}</td>
+                        <td>{{ p.objekatNaziv }}</td>
+
+                        <td>
+                            {{ p.vaziOd | date:'dd.MM.yyyy.' }}
+                            -
+                            {{ p.vaziDo | date:'dd.MM.yyyy.' }}
+                        </td>
+
+                        <td>
+                            {{ p.popust }}
+                            @if (p.tipPopusta == 'procenat') {
+                                %
+                            }
+                            @else {
+                                RSD
+                            }
+                        </td>
+
+                        <td>{{ p.sport || '-' }}</td>
+                        <td>{{ statusPromocije(p) }}</td>
+
+                        <td>
+                            <button
+                                type="button"
+                                (click)="izmeniPromociju(p)">
+
+                                Izmeni
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+
+        <button
+            type="button"
+            (click)="otvoriDodavanjePromocije()">
+
+            Dodaj promociju
+        </button>
+
+        @if (prikaziFormuPromocije) {
+            <h3>
+                @if (promocija.id) {
+                    Izmeni promociju
+                }
+                @else {
+                    Dodaj promociju
+                }
+            </h3>
+
+            <div class="form-grid four">
+                <label>Objekat</label>
+                <select [(ngModel)]="promocija.objekatId">
+                    <option value="">
+                        izaberi objekat
+                    </option>
+
+                    @for (o of objekti; track o.id) {
+                        <option [value]="o.id">
+                            {{ o.naziv }} - {{ o.grad }}
+                        </option>
+                    }
+                </select>
+
+                <label>Naziv</label>
+                <input
+                    type="text"
+                    [(ngModel)]="promocija.naziv">
+
+                <label>Vazi od</label>
+                <input
+                    type="date"
+                    [(ngModel)]="promocija.vaziOd">
+
+                <label>Vazi do</label>
+                <input
+                    type="date"
+                    [(ngModel)]="promocija.vaziDo">
+
+                <label>Tip popusta</label>
+                <select [(ngModel)]="promocija.tipPopusta">
+                    <option value="procenat">
+                        procenat
+                    </option>
+
+                    <option value="fiksni">
+                        fiksni
+                    </option>
+                </select>
+
+                <label>Popust</label>
+                <input
+                    type="number"
+                    min="1"
+                    [max]="promocija.tipPopusta == 'procenat' ? 100 : null"
+                    [(ngModel)]="promocija.popust">
+
+                <label>Sport</label>
+                <select [(ngModel)]="promocija.sport">
+                    <option value="">izaberi sport</option>
+                    @for (sport of sportovi; track sport) {
+                        <option [value]="sport">{{ sport }}</option>
+                    }
+                </select>
+            </div>
+
+            <button
+                type="button"
+                (click)="sacuvajPromociju()">
+
+                Sacuvaj promociju
+            </button>
+
+            <button
+                class="secondary"
+                type="button"
+                (click)="zatvoriFormuPromocije()">
+
+                Odustani
+            </button>
+        }
+    </section>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @if (prikaz == 'oprema') {
+            <section class="section">
+                <h3>Oprema i narudzbine</h3>
+
+                <div class="form-grid four">
+                    <label>Naziv opreme</label>
+                    <input type="text" [(ngModel)]="opremaForma.naziv">
+
+                    <label>Sport</label>
+                    <select [(ngModel)]="opremaForma.sport">
+                        <option value="">izaberi sport</option>
+                        @for (sport of sportovi; track sport) {
+                            <option [value]="sport">{{ sport }}</option>
+                        }
+                    </select>
+
+                    <label>Cena</label>
+                    <input type="number" min="0.01" step="0.01" [(ngModel)]="opremaForma.cena">
+
+                    <label>Zalihe</label>
+                    <input type="number" min="0" step="1" [(ngModel)]="opremaForma.zalihe">
+
+                    <label>Slika</label>
+                    <input
+                        #opremaSlikaInput
+                        type="file"
+                        accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                        (change)="uploadSlikeOpreme($event)">
+                </div>
+
+                @if (opremaForma.slika) {
+                    <img class="preview" [src]="opremaForma.slika" [alt]="opremaForma.naziv || 'Oprema'">
+                }
+
+                <button (click)="sacuvajOpremu()">Sacuvaj opremu</button>
+
+                @if (oprema.length == 0) {
+                    <p>Nema opreme u katalogu.</p>
+                }
+                @else {
+                    <table>
+                        <tr>
+                            <th>Slika</th>
+                            <th>Naziv</th>
+                            <th>Sport</th>
+                            <th>Cena</th>
+                            <th>Zalihe</th>
+                            <th>Akcija</th>
+                        </tr>
+                        @for (o of oprema; track o.id) {
+                            <tr>
+                                <td>
+                                    @if (o.slika) {
+                                        <img class="preview" [src]="o.slika" [alt]="o.naziv">
+                                    }
+                                    @else {
+                                        -
+                                    }
+                                </td>
+                                <td>{{ o.naziv }}</td>
+                                <td>{{ o.sport || '-' }}</td>
+                                <td>{{ o.cena }} RSD</td>
+                                <td>{{ o.zalihe }}</td>
+                                <td><button (click)="izmeniOpremu(o)">Izmeni</button></td>
+                            </tr>
+                        }
+                    </table>
+                }
+
+                <h4>Narudzbine</h4>
+                @if (narudzbine.length == 0) {
+                    <p>Nema narudzbina.</p>
+                }
+                @else {
+                    <table>
+                        <tr>
+                            <th>Stavke</th>
+                            <th>Korisnik</th>
+                            <th>Ukupno</th>
+                            <th>Status</th>
+                            <th>Akcija</th>
+                        </tr>
+                        @for (n of narudzbine; track n.id) {
+                            <tr>
+                                <td>
+                                    @for (stavka of n.stavke; track stavka.opremaId) {
+                                        <div>
+                                            {{ stavka.opremaNaziv }} -
+                                            {{ stavka.kolicina }} kom. x
+                                            {{ stavka.cena }} RSD
+                                        </div>
+                                    }
+                                </td>
+                                <td>{{ n.kor_ime }}</td>
+                                <td>{{ n.ukupno }} RSD</td>
+                                <td>{{ n.status }}</td>
+                                <td>
+                                    @if (n.status == 'naruceno') {
+                                        <button (click)="promeniStatusNarudzbine(n.id, 'prihvaceno')">Prihvati</button>
+                                        <button class="secondary" (click)="promeniStatusNarudzbine(n.id, 'otkazano')">Otkazi</button>
+                                    }
+                                    @else if (n.status == 'prihvaceno') {
+                                        <button (click)="promeniStatusNarudzbine(n.id, 'preuzeto')">Preuzeto</button>
+                                        <button class="secondary" (click)="promeniStatusNarudzbine(n.id, 'otkazano')">Otkazi</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+            </section>
+            }
+
+
+
+
+
+
+
+
+
+
+
+            @if (prikaz == 'kalendar') {
+            <section class="section">
+                <h3>Interaktivni kalendar</h3>
+
+                <div class="form-grid four">
+                    <label>Objekat</label>
+                    <select
+                        [(ngModel)]="kalendarObjekatId"
+                        (change)="promeniKalendarObjekat()">
+
+                        <option value="">izaberite objekat</option>
+
+                        @for (o of objekti; track o.id) {
+                            <option [value]="o.id">
+                                {{ o.naziv }} - {{ o.grad }}
+                            </option>
+                        }
+                    </select>
+
+                    <label>Teren / hala</label>
+                    <select
+                        [(ngModel)]="kalendarTerenNaziv"
+                        (change)="promeniKalendarTeren()">
+
+                        <option value="">izaberite teren / halu</option>
+
+                        @for (
+                            t of kalendarObjekat()?.tereni || [];
+                            track t.naziv
+                        ) {
+                            <option [value]="t.naziv">
+                                {{ t.naziv }} -
+                                {{ t.vrsta }} -
+                                {{ t.tip }}
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                @if (objekti.length == 0) {
+                    <p>Nema objekata povezanih sa firmom zaposlenog.</p>
+                }
+                @else if (!kalendarTeren()) {
+                    <p>Izaberite objekat i teren / halu.</p>
+                }
+                @else {
+                    <div class="calendar-toolbar">
+                        <div class="calendar-navigation">
+                            <button
+                                type="button"
+                                (click)="idiNaDanas()">
+                                Danas
+                            </button>
+                        </div>
+
+                        <strong class="calendar-range">
+                            {{ dani[0] | date:'dd.MM.yyyy.' }}
+                            -
+                            {{ dani[6] | date:'dd.MM.yyyy.' }}
+                        </strong>
+
+                        <label class="calendar-date-picker">
+                            Pocetni datum
+                            <input
+                                type="date"
+                                [(ngModel)]="pocetniDatumKalendara"
+                                (change)="promeniPocetniDatumKalendara()">
+                        </label>
+                    </div>
+
+                    <div class="calendar-legend">
+                        <span>
+                            <i class="legend-color trening-legend"></i>
+                            trening
+                        </span>
+                        <span>
+                            <i class="legend-color rezervacija-legend"></i>
+                            rezervacija
+                        </span>
+                    </div>
+
+
+                    <div class="calendar">
+                        <div class="calendar-head">
+                            Vreme
+                        </div>
+
+                        @for (
+                            d of dani;
+                            track d.toDateString()
+                        ) {
+                            <div class="calendar-head">
+                                {{ d | date:'EEE dd.MM.' }}
+                            </div>
+                        }
+
+                        @for (sat of sati; track sat) {
+                            <div class="time-cell">
+                                {{ sat }}
+                            </div>
+
+                            @for (d of dani; track $index) {
+                                <div
+                                    class="calendar-cell"
+                                    [class.drop-disabled]="!mozePomeranjeKalendara()"
+                                    (dragover)="dozvoliDrop($event)"
+                                    (drop)="dropTermin($event, d, sat)">
+
+                                    @for (
+                                        g of grupeUSlotu(d, sat);
+                                        track g.id
+                                    ) {
+                                        <div
+                                            class="card"
+                                            [class.trening-card]="g.tip == 'trening'"
+                                            [class.rezervacija-card]="g.tip == 'rezervacija'"
+                                            [class.drag-disabled]="!mozePrevuciGrupu(g)"
+                                            [class.dragging]="prevucenaGrupa?.id == g.id"
+                                            [style.top.px]="vrhKartice(g, d, sat)"
+                                            [style.height.px]="visinaKartice(g)"
+                                            [draggable]="mozePrevuciGrupu(g)"
+                                            [title]="mozePrevuciGrupu(g)
+                                                ? 'Prevucite termin na novi datum i vreme'
+                                                : 'Ovaj termin nije moguce pomeriti'"
+                                            (dragstart)="dragStart($event, g)"
+                                            (dragend)="dragEnd()">
+
+                                            <strong>
+                                                @if (g.tip == 'trening') {
+                                                    Trening
+                                                }
+                                                @else {
+                                                    Rezervacija
+                                                }
+                                                - {{ g.kor_ime }}
+                                            </strong>
+
+                                            <br>
+
+                                            {{ g.pocetak | date:'HH:mm' }}
+                                            -
+                                            {{ g.kraj | date:'HH:mm' }}
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </section>
+        }
+
+
+
+
+
+
+
+
+
+
+            @if (prikaz == 'izvestaji') {
+            <section class="section">
+                <h3>Izvestaji</h3>
+
+                <h4>Popunjenost terena</h4>
+                <div class="form-grid four">
+                    <label>Objekat</label>
+                    <select [(ngModel)]="izvestajObjekatId">
+                        <option value="">izaberite objekat</option>
+                        @for (o of objekti; track o.id) {
+                            <option [value]="o.id">{{ o.naziv }}</option>
+                        }
+                    </select>
+
+                    <label>Mesec</label>
+                    <input type="month" [(ngModel)]="mesecPopunjenosti">
+                </div>
+
+                <button
+                    [disabled]="!izvestajObjekatId || !mesecPopunjenosti"
+                    (click)="izvestajPopunjenost()">
+                    PDF popunjenost
+                </button>
+
+                <h4>Promet opreme firme</h4>
+                <div class="form-grid four">
+                    <label>Mesec</label>
+                    <input type="month" [(ngModel)]="mesecPrometaOpreme">
+                </div>
+
+                <button
+                    class="secondary"
+                    [disabled]="!mesecPrometaOpreme"
+                    (click)="izvestajOprema()">
+                    PDF promet opreme
+                </button>
+            </section>
+            }
+        }
+    </section>
+</main>

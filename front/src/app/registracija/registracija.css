@@ -1,0 +1,225 @@
+.auth-page {
+    min-height: 100vh;
+    padding: 42px 20px;
+    box-sizing: border-box;
+    background: #edf2f7;
+    font-family: Arial, sans-serif;
+}
+
+.auth-box {
+    width: min(880px, 100%);
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth-box h2 {
+    margin: 0 0 26px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #2f6f9f;
+    color: #1f2937;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.auth-box h3 {
+    margin: 28px 0 12px;
+    padding-top: 18px;
+    border-top: 1px solid #d7dee8;
+    color: #1f2937;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #aeb8c4;
+    border-radius: 4px;
+    outline: none;
+    background: white;
+    color: #222;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #2f6f9f;
+    box-shadow: 0 0 0 2px rgba(47, 111, 159, 0.14);
+}
+
+button {
+    margin-top: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #2f6f9f;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+button:hover {
+    background: #285d85;
+}
+
+.secondary {
+    margin-left: 8px;
+    background: #d7dee8;
+    color: #1f2937;
+}
+
+.secondary:hover {
+    background: #c8d1dc;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.grid2 label {
+    margin-top: 14px;
+}
+
+.dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    padding: 10px;
+    border: 1px solid #aeb8c4;
+    background: white;
+    color: #222;
+    font-weight: 600;
+    text-align: left;
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+    border-color: #2f6f9f;
+    background: white;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    max-height: 220px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 1px solid #ccd6e2;
+    border-radius: 4px;
+    background: white;
+}
+
+.dropdown-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 9px 10px;
+    color: #222;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background: #f2f5f9;
+}
+
+.dropdown-option input {
+    width: auto;
+    margin: 0;
+}
+
+.preview {
+    display: block;
+    width: 86px;
+    height: 86px;
+    object-fit: cover;
+    margin-top: 12px;
+    border: 1px solid #ccd6e2;
+    border-radius: 4px;
+    background: white;
+}
+
+.greska,
+.uspeh {
+    margin: 16px 0 0;
+    padding: 9px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.greska {
+    border: 1px solid #e2b1b1;
+    background: #fff1f1;
+    color: #9f2424;
+}
+
+.uspeh {
+    border: 1px solid #abd0b0;
+    background: #effaf1;
+    color: #27632a;
+}
+
+.auth-box > button:not(.secondary) {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.auth-box > a {
+    display: inline-block;
+    margin-top: 14px;
+    color: #2f6f9f;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-box > a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .auth-page {
+        padding: 28px 14px;
+    }
+
+    .auth-box h2 {
+        font-size: 24px;
+    }
+
+    .grid2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .secondary {
+        margin-left: 0;
+    }
+}

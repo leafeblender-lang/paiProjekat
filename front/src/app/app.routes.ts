@@ -1,0 +1,23 @@
+import { Routes } from '@angular/router';
+import { DetaljiObjekta } from './detalji-objekta/detalji-objekta';
+import { Login } from './login/login';
+import { Pocetna } from './pocetna/pocetna';
+import { Registracija } from './registracija/registracija';
+import { Sportista } from './sportista/sportista';
+import { ZaboravljenaLozinka } from './zaboravljena-lozinka/zaboravljena-lozinka';
+import { Zaposleni } from './zaposleni/zaposleni';
+import { ResetLozinke } from './reset-lozinke/reset-lozinke';
+import { AdminLogin } from './admin-login/admin-login';
+import { Administrator } from './administrator/administrator';
+export const routes: Routes = [
+    { path: '', component: Pocetna },
+    { path: 'login', component: Login },
+    { path: 'registracija', component: Registracija },
+    { path: 'zaboravljena-lozinka', component: ZaboravljenaLozinka },
+    { path: 'sportista', component: Sportista },
+    { path: 'zaposleni', component: Zaposleni },
+    { path: 'detalji-objekta', component: DetaljiObjekta },
+    { path: 'reset-lozinke/:token', component: ResetLozinke },
+    { path: 'admin-login', component: AdminLogin },
+    { path: 'administrator', component: Administrator },
+];

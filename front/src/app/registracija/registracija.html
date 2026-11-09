@@ -1,0 +1,102 @@
+<main class="auth-page">
+    <section class="auth-box wide">
+        <h2>Registracija</h2>
+
+        <label>Tip korisnika</label>
+        <select [(ngModel)]="user.tip">
+            <option value="sportista">sportista</option>
+            <option value="zaposleni">zaposleni</option>
+        </select>
+
+        <label>Korisnicko ime</label>
+        <input type="text" [(ngModel)]="user.kor_ime">
+
+        <label>Lozinka</label>
+        <input type="password" [(ngModel)]="user.lozinka">
+
+        <label>Ponovi lozinku</label>
+        <input type="password" [(ngModel)]="ponovljenaLozinka">
+
+        <div class="grid2">
+            <div>
+                <label>Ime</label>
+                <input type="text" [(ngModel)]="user.ime">
+            </div>
+            <div>
+                <label>Prezime</label>
+                <input type="text" [(ngModel)]="user.prezime">
+            </div>
+        </div>
+
+        <label>Telefon</label>
+        <input type="text" [(ngModel)]="user.telefon" placeholder="+381">
+        
+
+        <label>Mejl</label>
+        <input type="email" [(ngModel)]="user.mejl">
+
+        @if(user.tip!='zaposleni'){
+        <label>Sportovi</label>
+        <div class="dropdown">
+            <button type="button"  class="dropdown-button" (click)="otvoren = !otvoren" >
+                <span>Izaberi sportove</span>
+            </button>
+
+            @if (otvoren) {
+                <div class="dropdown-menu">
+                    @for (sport of sportovi; track sport) {
+                        <label class="dropdown-option">
+                            <input type="checkbox" [checked]="sportVecDodat(sport)" (change)="promeniSport($event, sport)" >
+                            <span>{{ sport }}</span>
+                        </label>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+        <label>Profilna slika</label>
+        <input #profilnaInput type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" (change)="uploadSlike($event)">
+        <button class="secondary" (click)="generisiAvatar()">Generisi avatar</button>
+
+        @if (avatar) {
+            <img class="preview" [src]="avatar" alt="Avatar">
+            <button class="secondary" (click)="sacuvajAvatar()">Sacuvaj kao profilnu sliku</button>
+        }
+
+        @if (user.profilnaSlika) {
+            <img class="preview" [src]="user.profilnaSlika" alt="Profilna slika">
+        }
+
+
+
+        @if (user.tip == 'zaposleni') {
+            <h3>Firma</h3>
+
+            <label>Naziv firme</label>
+            <input type="text" [(ngModel)]="nazivFirme">
+
+            <label>Adresa sedista</label>
+            <input type="text" [(ngModel)]="adresaSedista">
+            <div class="grid2">
+                <div>
+                    <label>Maticni broj</label>
+                    <input type="text" [(ngModel)]="maticniBroj">
+                </div>
+                <div>
+                    <label>PIB</label>
+                    <input type="text" [(ngModel)]="pib">
+                </div>
+            </div>
+        }
+
+        @if (poruka) {
+            <p class="greska">{{ poruka }}</p>
+        }
+
+
+        <button (click)="registrujSe()">Posalji zahtev</button>
+        <button (click)="nazadNaPri()">Nazad na prijavu</button>
+ 
+    </section>
+</main>

@@ -1,0 +1,109 @@
+[{
+	"_id": {
+		"$oid": "6a537f908175ce842d5ce3c2"
+	},
+	"id": "promo1",
+	"naziv": "Letnji popust",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"vaziOd": {
+		"$date": "2026-07-06T22:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2026-07-31T22:00:00Z"
+	},
+	"tipPopusta": "procenat",
+	"popust": 15,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a537f908175ce842d5ce3c3"
+	},
+	"id": "promo2",
+	"naziv": "Sezonski popust",
+	"objekatId": "id2",
+	"objekatNaziv": "Winner Padel",
+	"vaziOd": {
+		"$date": "2026-07-06T22:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2026-07-31T22:00:00Z"
+	},
+	"tipPopusta": "fiksni",
+	"popust": 700,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a537f908175ce842d5ce3c4"
+	},
+	"id": "promo3",
+	"naziv": "Jutarnji termini (do 12)",
+	"objekatId": "id10",
+	"objekatNaziv": "11 April",
+	"vaziOd": {
+		"$date": "2026-07-06T22:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2026-07-31T22:00:00Z"
+	},
+	"tipPopusta": "procenat",
+	"popust": 10,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a537f908175ce842d5ce3c5"
+	},
+	"id": "promo4",
+	"naziv": "Fudbal za najmladje Istekla",
+	"objekatId": "id3",
+	"objekatNaziv": "Crveno & Crno",
+	"vaziOd": {
+		"$date": "2024-12-31T23:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2025-01-01T23:00:00Z"
+	},
+	"tipPopusta": "procenat",
+	"popust": 50,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a6543af11a9f4d4258ced4b"
+	},
+	"id": "promo2",
+	"naziv": "Kocovic manija",
+	"objekatId": "id4",
+	"objekatNaziv": "Cair sportski centar",
+	"vaziOd": {
+		"$date": "2026-07-11T22:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2026-07-31T22:00:00Z"
+	},
+	"tipPopusta": "fiksni",
+	"popust": 700,
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65db6b6061ecffa56e463c"
+	},
+	"id": "promo22",
+	"naziv": "Neko reko popust?",
+	"objekatId": "id13",
+	"objekatNaziv": "X Padel",
+	"vaziOd": {
+		"$date": "2026-05-06T22:00:00Z"
+	},
+	"vaziDo": {
+		"$date": "2026-08-22T22:00:00Z"
+	},
+	"tipPopusta": "procenat",
+	"popust": 33,
+	"__v": 0
+}]
+

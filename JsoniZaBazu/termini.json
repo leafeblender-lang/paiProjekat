@@ -1,0 +1,384 @@
+[{
+	"_id": {
+		"$oid": "6a59272fa9a6b63130b2943b"
+	},
+	"id": "term1784227631640",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-17T08:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-17T11:00:00Z"
+	},
+	"status": "prihvacen",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a59273da9a6b63130b29441"
+	},
+	"id": "term1784227645407",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-18T11:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-18T14:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a592b26a9a6b63130b29483"
+	},
+	"id": "term1784228646994",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-21T09:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-21T10:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a592bfca9a6b63130b2cc00"
+	},
+	"id": "term1784228860315",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-19T09:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-19T11:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a592c02a9a6b63130b2cc09"
+	},
+	"id": "term1784228866912",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-19T13:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-19T15:00:00Z"
+	},
+	"status": "odbijen",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a592c59a9a6b63130b2cc15"
+	},
+	"id": "term1784228953478",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-18T08:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-18T09:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a592ca6a9a6b63130b2cc21"
+	},
+	"id": "term1784229030597",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-20T12:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-20T20:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a5a37a36529deaa637fd87e"
+	},
+	"id": "id1784297379362",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "kokos",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-21T11:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-21T12:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a655b2417da81e78d7c3548"
+	},
+	"id": "id1785027364494",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "veljko",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-28T09:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-28T12:00:00Z"
+	},
+	"status": "prihvacen",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a655b2717da81e78d7c354e"
+	},
+	"id": "id1785027367889",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "veljko",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-27T07:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-27T09:00:00Z"
+	},
+	"status": "prihvacen",
+	"prisustvo": "dosao",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a655b6817da81e78d7c356a"
+	},
+	"id": "id1785027432411",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "aleksa",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-27T06:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-27T10:00:00Z"
+	},
+	"status": "otkazan",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a655b6b17da81e78d7c3570"
+	},
+	"id": "id1785027435311",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "aleksa",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-28T11:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-28T13:00:00Z"
+	},
+	"status": "odbijen",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a6575759f99d2db6b6eab81"
+	},
+	"id": "id1785034101069",
+	"objekatId": "id11",
+	"objekatNaziv": "GDM SC",
+	"terenNaziv": "Sala za mali fudbal",
+	"grad": "Novi Sad",
+	"sport": "mali fudbal",
+	"kor_ime": "veljko",
+	"tip": "trening",
+	"pocetak": {
+		"$date": "2026-07-26T10:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-26T11:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"trenerId": "trener1",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65a764ab51535e0ff3be35"
+	},
+	"id": "id1785046884279",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Fudbal 5x5",
+	"grad": "Beograd",
+	"sport": "fudbal",
+	"kor_ime": "aleksa",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-29T09:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-29T14:00:00Z"
+	},
+	"status": "prihvacen",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a65a799ab51535e0ff3be7a"
+	},
+	"id": "id1785046937100",
+	"objekatId": "id1",
+	"objekatNaziv": "SC Vizura",
+	"terenNaziv": "Hala A",
+	"grad": "Beograd",
+	"sport": "kosarka",
+	"kor_ime": "aleksa",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-27T09:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-27T12:00:00Z"
+	},
+	"status": "prihvacen",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a6607e75bf33cbb050a157f"
+	},
+	"id": "id1785071591323",
+	"objekatId": "id2",
+	"objekatNaziv": "Winner Padel",
+	"terenNaziv": "Padel 1",
+	"grad": "Beograd",
+	"sport": "padel",
+	"kor_ime": "veljko",
+	"tip": "rezervacija",
+	"pocetak": {
+		"$date": "2026-07-27T05:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-27T07:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"trenerId": "",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a66095f5bf33cbb050a1679"
+	},
+	"id": "id1785071967508",
+	"objekatId": "id2",
+	"objekatNaziv": "Winner Padel",
+	"terenNaziv": "Padel 1",
+	"grad": "Beograd",
+	"sport": "padel",
+	"kor_ime": "veljko",
+	"tip": "trening",
+	"pocetak": {
+		"$date": "2026-07-28T08:00:00Z"
+	},
+	"kraj": {
+		"$date": "2026-07-28T09:00:00Z"
+	},
+	"status": "na cekanju",
+	"prisustvo": "",
+	"trenerId": "trener2",
+	"__v": 0
+}]
+

@@ -1,0 +1,19 @@
+<main class="auth-page">
+    <section class="auth-box">
+        <h2>Zaboravljena lozinka</h2>
+
+        <label>Korisnicko ime ili mejl</label>
+        <input type="text" [(ngModel)]="korisnik">
+
+        @if (poruka) {
+            <p>{{ poruka }}</p>
+            @if(poruka=="Link za reset lozinke je poslat na mejl")
+            {
+                <a [href]="link">Link</a>
+            }
+        }
+
+        <button (click)="posalji()">Posalji link</button>
+        <button type="button" (click)="nazadNaPrijavu()">Nazad na prijavu</button>
+    </section>
+</main>

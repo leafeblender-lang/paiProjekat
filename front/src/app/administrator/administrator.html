@@ -1,0 +1,319 @@
+<main class="page">
+    <section class="panel">
+        <h2>Administrator</h2>
+
+        @if (poruka) {
+            <p class="poruka">{{ poruka }}</p>
+        }
+
+        <section class="section">
+            <h3>Korisnicki nalozi</h3>
+
+            @if (korisnici.length == 0) {
+                <p>Nema korisnickih naloga.</p>
+            }
+            @else {
+                <table>
+                    <tr>
+                        <th>Korisnicko ime</th>
+                        <th>Ime i prezime</th>
+                        <th>Telefon</th>
+                        <th>Mejl</th>
+                        <th>Tip</th>
+                        <th>Status</th>
+                        <th>Firma</th>
+                        <th>Sportovi</th>
+                        <th>Akcija</th>
+                    </tr>
+
+                    @for (korisnik of korisnici; track korisnik._id) {
+                        <tr>
+                            <td>{{ korisnik.kor_ime }}</td>
+                            <td>{{ korisnik.ime }} {{ korisnik.prezime }}</td>
+                            <td>{{ korisnik.telefon }}</td>
+                            <td>{{ korisnik.mejl }}</td>
+                            <td>{{ korisnik.tip }}</td>
+                            <td
+                                [class.green]="korisnik.status == 'aktivan'"
+                                [class.red]="korisnik.status == 'odbijen'">
+                                {{ korisnik.status }}
+                            </td>
+                            <td>{{ korisnik.firmaId || '-' }}</td>
+                            <td>{{ korisnik.sportovi.join(', ') || '-' }}</td>
+                            <td>
+                                <button
+                                    type="button"
+                                    (click)="izaberiKorisnikaZaIzmenu(korisnik)">
+                                    Izmeni
+                                </button>
+
+                                @if (korisnik.kor_ime != user.kor_ime) {
+                                    <button
+                                        class="danger"
+                                        type="button"
+                                        (click)="obrisiKorisnika(korisnik)">
+                                        Obrisi
+                                    </button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+
+            @if (korisnikZaIzmenu) {
+                <div class="korisnik-form">
+                    <h4>Izmena naloga {{ korisnikZaIzmenu.kor_ime }}</h4>
+
+                    <label>Korisnicko ime</label>
+                    <input
+                        type="text"
+                        [value]="korisnikZaIzmenu.kor_ime"
+                        disabled>
+
+                    <label>Tip korisnika</label>
+                    <input
+                        type="text"
+                        [value]="korisnikZaIzmenu.tip"
+                        disabled>
+
+                    <label>Ime</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="korisnikZaIzmenu.ime">
+
+                    <label>Prezime</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="korisnikZaIzmenu.prezime">
+
+                    <label>Telefon</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="korisnikZaIzmenu.telefon">
+
+                    <label>Mejl</label>
+                    <input
+                        type="email"
+                        [(ngModel)]="korisnikZaIzmenu.mejl">
+
+                    <label>Status</label>
+                    <select
+                        [(ngModel)]="korisnikZaIzmenu.status"
+                        [disabled]="korisnikZaIzmenu.kor_ime == user.kor_ime">
+                        <option value="aktivan">aktivan</option>
+                        <option value="na cekanju">na cekanju</option>
+                        <option value="odbijen">odbijen</option>
+                    </select>
+
+                    <div class="form-actions">
+                        <button
+                            type="button"
+                            (click)="sacuvajIzmeneKorisnika()">
+                            Sacuvaj
+                        </button>
+                        <button
+                            type="button"
+                            class="danger"
+                            (click)="otkaziIzmenuKorisnika()">
+                            Odustani
+                        </button>
+                    </div>
+                </div>
+            }
+        </section>
+
+        <section class="section">
+            <h3>Zahtevi za registraciju</h3>
+
+            @if (zahteviRegistracije.length == 0) {
+                <p>Nema zahteva na cekanju.</p>
+            }
+            @else {
+                <table>
+                    <tr>
+                        <th>Korisnicko ime</th>
+                        <th>Ime i prezime</th>
+                        <th>Mejl</th>
+                        <th>Tip</th>
+                        <th>Firma</th>
+                        <th>Sportovi</th>
+                        <th>Akcija</th>
+                    </tr>
+
+                    @for (
+                        korisnik of zahteviRegistracije;
+                        track korisnik._id
+                    ) {
+                        <tr>
+                            <td>{{ korisnik.kor_ime }}</td>
+                            <td>
+                                {{ korisnik.ime }} {{ korisnik.prezime }}
+                            </td>
+                            <td>{{ korisnik.mejl }}</td>
+                            <td>{{ korisnik.tip }}</td>
+                            <td>{{ korisnik.firmaId || '-' }}</td>
+                            <td>
+                                {{ korisnik.sportovi.join(', ') || '-' }}
+                            </td>
+                            <td>
+                                <button
+                                    type="button"
+                                    (click)="promeniStatusRegistracije(
+                                        korisnik,
+                                        'aktivan'
+                                    )">
+                                    Odobri
+                                </button>
+
+                                <button
+                                    class="danger"
+                                    type="button"
+                                    (click)="promeniStatusRegistracije(
+                                        korisnik,
+                                        'odbijen'
+                                    )">
+                                    Odbij
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </section>
+
+        <section class="section">
+            <h3>Zahtevi za sportske objekte</h3>
+
+            @if (zahteviObjekata.length == 0) {
+                <p>Nema novih objekata na cekanju.</p>
+            }
+            @else {
+                <table>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Grad i adresa</th>
+                        <th>Firma</th>
+                        <th>Uneo</th>
+                        <th>Sportovi</th>
+                        <th>Elementi</th>
+                        <th>Akcija</th>
+                    </tr>
+
+                    @for (objekat of zahteviObjekata; track objekat.id) {
+                        <tr>
+                            <td>{{ objekat.naziv }}</td>
+                            <td>
+                                {{ objekat.grad }}, {{ objekat.adresa }}
+                            </td>
+                            <td>{{ objekat.firmaId }}</td>
+                            <td>{{ objekat.uneo || '-' }}</td>
+                            <td>{{ objekat.sportovi.join(', ') }}</td>
+                            <td>
+                                @for (
+                                    teren of objekat.tereni;
+                                    track teren.naziv
+                                ) {
+                                    <div>
+                                        {{ teren.naziv }} -
+                                        {{ teren.sport }} -
+                                        {{ teren.tip }} {{ teren.vrsta }}
+                                    </div>
+                                }
+                            </td>
+                            <td>
+                                <button
+                                    type="button"
+                                    (click)="promeniStatusObjekta(
+                                        objekat,
+                                        'aktivan'
+                                    )">
+                                    Odobri
+                                </button>
+
+                                <button
+                                    class="danger"
+                                    type="button"
+                                    (click)="promeniStatusObjekta(
+                                        objekat,
+                                        'odbijen'
+                                    )">
+                                    Odbij
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </section>
+
+        <section class="section">
+            <h3>Treneri</h3>
+
+            <table>
+                <tr>
+                    <th>Ime</th>
+                    <th>Sport</th>
+                    <th>Objekti</th>
+                    <th>Specijalizacija</th>
+                    <th>Cena po satu</th>
+                    <th>Status</th>
+                    <th>Akcija</th>
+                </tr>
+
+                @for (trener of treneri; track trener.id) {
+                    <tr>
+                        <td>{{ trener.ime }}</td>
+                        <td>{{ trener.sport }}</td>
+                        <td>{{ trener.objekatId.join(', ') }}</td>
+                        <td>{{ trener.specijalizacija }}</td>
+                        <td>{{ trener.cenaPoSatu }} RSD</td>
+                        <td
+                            [class.green]="trener.status == 'aktivan'"
+                            [class.red]="trener.status == 'neaktivan'">
+                            {{ trener.status }}
+                        </td>
+                        <td>
+                            @if (trener.status == 'aktivan') {
+                                <button
+                                    type="button"
+                                    (click)="deaktivirajTrenera(trener)">
+                                    Deaktiviraj
+                                </button>
+                            }
+                            @else {
+                                -
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </section>
+
+        <section class="section">
+            <h3>Dozvoljeni sportovi</h3>
+
+            <div class="sport-form">
+                <input
+                    type="text"
+                    [(ngModel)]="noviSport"
+                    placeholder="Naziv novog sporta">
+                <button type="button" (click)="dodajSport()">
+                    Dodaj sport
+                </button>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Naziv sporta</th>
+                </tr>
+
+                @for (sport of sportovi; track sport) {
+                    <tr>
+                        <td>{{ sport }}</td>
+                    </tr>
+                }
+            </table>
+        </section>
+    </section>
+</main>

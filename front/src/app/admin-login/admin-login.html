@@ -1,0 +1,24 @@
+<main class="auth-page">
+    <section class="auth-box">
+        <h2>Prijava administratora</h2>
+
+        <label>Korisnicko ime</label>
+        <input type="text" [(ngModel)]="kor_ime">
+
+        <label>Lozinka</label>
+        <input type="password" [(ngModel)]="lozinka">
+
+        @if (poruka) {
+            <p class="greska">{{ poruka }}</p>
+        }
+
+        <button (click)="login()">Prijavi se</button>
+
+        <div class="links">
+            <a routerLink="/zaboravljena-lozinka">Zaboravljena lozinka</a>
+            <a routerLink="/registracija">Registracija</a>
+            <a routerLink="/">Pocetna</a>
+        </div>
+    </section>
+</main>
+

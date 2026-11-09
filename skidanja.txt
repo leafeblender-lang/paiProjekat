@@ -1,0 +1,119 @@
+KORISCENE BIBLIOTEKE 
+
+
+npm install
+
+
+FRONTEND
+
+Produkcione biblioteke:
+
+@angular/common ^20.3.0
+https://www.npmjs.com/package/@angular/common
+
+@angular/compiler ^20.3.0
+https://www.npmjs.com/package/@angular/compiler
+
+@angular/core ^20.3.0
+https://www.npmjs.com/package/@angular/core
+
+@angular/forms ^20.3.0
+https://www.npmjs.com/package/@angular/forms
+
+@angular/platform-browser ^20.3.0
+https://www.npmjs.com/package/@angular/platform-browser
+
+@angular/router ^20.3.0
+https://www.npmjs.com/package/@angular/router
+
+@dicebear/collection ^9.4.2
+https://www.npmjs.com/package/@dicebear/collection
+
+@dicebear/core ^9.4.3
+https://www.npmjs.com/package/@dicebear/core
+
+rxjs ~7.8.0
+https://www.npmjs.com/package/rxjs
+
+tslib ^2.3.0
+https://www.npmjs.com/package/tslib
+
+zone.js ~0.15.0
+https://www.npmjs.com/package/zone.js
+
+
+Razvojne biblioteke za frontend:
+
+@angular/build ^20.3.6
+https://www.npmjs.com/package/@angular/build
+
+@angular/cli ^20.3.6
+https://www.npmjs.com/package/@angular/cli
+
+@angular/compiler-cli ^20.3.0
+https://www.npmjs.com/package/@angular/compiler-cli
+
+@types/jasmine ~5.1.0
+https://www.npmjs.com/package/@types/jasmine
+
+jasmine-core ~5.9.0
+https://www.npmjs.com/package/jasmine-core
+
+karma ~6.4.0
+https://www.npmjs.com/package/karma
+
+karma-chrome-launcher ~3.2.0
+https://www.npmjs.com/package/karma-chrome-launcher
+
+karma-coverage ~2.2.0
+https://www.npmjs.com/package/karma-coverage
+
+karma-jasmine ~5.1.0
+https://www.npmjs.com/package/karma-jasmine
+
+karma-jasmine-html-reporter ~2.1.0
+https://www.npmjs.com/package/karma-jasmine-html-reporter
+
+typescript ~5.9.2
+https://www.npmjs.com/package/typescript
+
+
+BACKEND
+
+Produkcione biblioteke:
+
+cors ^2.8.5
+https://www.npmjs.com/package/cors
+
+express ^5.2.1
+https://www.npmjs.com/package/express
+
+mongodb ^7.0.0
+https://www.npmjs.com/package/mongodb
+
+mongoose ^9.1.5
+https://www.npmjs.com/package/mongoose
+
+pdfkit ^0.19.1
+https://www.npmjs.com/package/pdfkit
+
+resend ^6.17.2
+https://www.npmjs.com/package/resend
+
+
+Razvojne biblioteke za backend:
+
+@types/cors ^2.8.19
+https://www.npmjs.com/package/@types/cors
+
+@types/express ^5.0.6
+https://www.npmjs.com/package/@types/express
+
+@types/node ^25.0.9
+https://www.npmjs.com/package/@types/node
+
+@types/pdfkit ^0.17.6
+https://www.npmjs.com/package/@types/pdfkit
+
+typescript ~5.9.2
+https://www.npmjs.com/package/typescript

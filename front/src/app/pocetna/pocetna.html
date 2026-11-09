@@ -1,0 +1,104 @@
+<main class="home-page">
+    <section class="public-box">
+         <h3>Pretraga objekata</h3>
+        <div class="search-grid">
+            <div>
+                <label>Naziv objekta</label>
+                <input type="text" [(ngModel)]="naziv">
+            </div>
+
+            <div>
+                <label>Gradovi</label>
+                <select multiple size="1" (change)="izaberiGradove($event)">
+                    @for (g of gradovi; track g) {
+                        <option [value]="g">{{ g }}</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Sport</label>
+                <select [(ngModel)]="izabranSport">
+                    <option value="">svi sportovi</option>
+                    @for (s of sportovi; track s) {
+                        <option [value]="s">{{ s }}</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Tip terena</label>
+                <select [(ngModel)]="tipTerena">
+                    <option value="">svi tipovi</option>
+                    <option value="otvoreni">otvoreni</option>
+                    <option value="zatvoreni">zatvoreni</option>
+                </select>
+            </div>
+        </div>
+
+        <button (click)="pretrazi()">Pretrazi</button>
+
+        <table>
+            <tr>
+                <th class="sort" (click)="sortiraj('naziv')">Naziv {{ oznakaSorta('naziv') }}</th>
+                <th class="sort" (click)="sortiraj('grad')">Grad {{ oznakaSorta('grad') }}</th>
+                <th class="sort" (click)="sortiraj('sport')">Sport {{ oznakaSorta('sport') }}</th>
+                <th>Tipovi terena</th>
+                <th>Akcija</th>
+            </tr>
+            @for (o of rezultati; track o.id) {
+                <tr>
+                    <td>{{ o.naziv }}</td>
+                    <td>{{ o.grad }}</td>
+                    <td>{{ o.sportovi.join(', ') }}</td>
+                    <td>{{ o.tipoviTerena.join(', ') }}</td>
+                    <td><button (click)="detalji(o.id)">Detalji</button></td>
+                </tr>
+            }
+        </table>
+        <h2>Sportski objekti</h2>
+        <p>Ukupno aktivnih objekata: {{ ukupnoAktivnih }}</p>
+
+        <h3>Top 3 objekta</h3>
+        <table>
+            <tr>
+                <th>Naziv</th>
+                <th>Grad</th>
+                <th>Svidjanja</th>
+            </tr>
+            @for (o of topObjekti; track o.id) {
+                <tr>
+                    <td>{{ o.naziv }}</td>
+                    <td>{{ o.grad }}</td>
+                    <td>{{ o.lajkovi }}</td>
+                </tr>
+            }
+        </table>
+
+        <h3>Aktuelne promocije</h3>
+        <table>
+            <tr>
+                <th>Naziv</th>
+                <th>Objekat</th>
+                <th>Period</th>
+                <th>Popust</th>
+            </tr>
+            @for (p of promocije; track p.id) {
+                <tr>
+                    <td>{{ p.naziv }}</td>
+                    <td>{{ p.objekatNaziv }}</td>
+                    <td>{{ p.vaziOd | date:'dd.MM.yyyy.' }} - {{ p.vaziDo | date:'dd.MM.yyyy.' }}</td>
+                    <td>
+                        @if (p.tipPopusta == 'procenat') {
+                            {{ p.popust }}%
+                        } @else {
+                            {{ p.popust }}rsd
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+
+       
+    </section>
+</main>

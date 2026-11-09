@@ -1,0 +1,102 @@
+[{
+	"_id": {
+		"$oid": "6a592e1da9a6b63130b2cc2d"
+	},
+	"id": "ogl1784229405557",
+	"autor": "kokos",
+	"sport": "mali fudbal",
+	"grad": "Beograd",
+	"datum": {
+		"$date": "2026-07-16T00:00:00Z"
+	},
+	"termin": "16:00",
+	"brojIgraca": 4,
+	"status": "aktivan",
+	"zahtevi": [],
+	"datumKreiranja": {
+		"$date": "2026-07-16T19:16:45.557Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6a655e7517da81e78d7c360a"
+	},
+	"id": "id1785028213285",
+	"autor": "veljko",
+	"sport": "kosarka",
+	"grad": "Beograd",
+	"datum": {
+		"$date": "2026-07-27T00:00:00Z"
+	},
+	"terminOd": "12:00",
+	"terminDo": "13:00",
+	"brojIgraca": 3,
+	"status": "zatvoren",
+	"zahtevi": [
+		{
+			"kor_ime": "aleksa",
+			"status": "prihvacen"
+		},
+		{
+			"kor_ime": "ivan",
+			"status": "na cekanju"
+		}
+	],
+	"datumKreiranja": {
+		"$date": "2026-07-26T01:10:13.285Z"
+	},
+	"__v": 2
+},
+{
+	"_id": {
+		"$oid": "6a65609c17da81e78d7c36a6"
+	},
+	"id": "id1785028764367",
+	"autor": "veljko",
+	"sport": "odbojka",
+	"grad": "Beograd",
+	"datum": {
+		"$date": "2026-07-23T00:00:00Z"
+	},
+	"terminOd": "15:00",
+	"terminDo": "16:00",
+	"brojIgraca": 1,
+	"status": "zatvoren",
+	"zahtevi": [
+		{
+			"kor_ime": "aleksa",
+			"status": "na cekanju"
+		},
+		{
+			"kor_ime": "ivan",
+			"status": "prihvacen"
+		}
+	],
+	"datumKreiranja": {
+		"$date": "2026-07-26T01:19:24.367Z"
+	},
+	"__v": 2
+},
+{
+	"_id": {
+		"$oid": "6a66082a5bf33cbb050a15a5"
+	},
+	"id": "id1785071658100",
+	"autor": "veljko",
+	"sport": "odbojka",
+	"grad": "Beograd",
+	"datum": {
+		"$date": "2026-07-26T00:00:00Z"
+	},
+	"terminOd": "12:00",
+	"terminDo": "13:00",
+	"brojIgraca": 4,
+	"status": "aktivan",
+	"zahtevi": [],
+	"datumKreiranja": {
+		"$date": "2026-07-26T13:14:18.1Z"
+	},
+	"__v": 0
+}]
+
